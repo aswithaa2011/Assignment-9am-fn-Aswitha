@@ -1,0 +1,31 @@
+  body {
+            text-align: center;
+            
+
+        }
+
+        #name {
+            font-size: 40px;
+            color: rgb(177, 19, 161);
+        }
+
+        .des {
+            font-size: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: brown;
+
+        }
+#section1{
+    background-color: blue;
+}
+
+#section2{
+    background-color: yellow;
+}
+#section3{
+    background-color: green;
+}
+        footer {
+            color: rgb(4, 4, 79);
+        }
+
