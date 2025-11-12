@@ -1,0 +1,18 @@
+input:focus{
+    border: 5px solid tomato;
+    background-color: rgb(192, 202, 125);
+    outline: none;
+}
+
+textarea:hover{
+        border: 5px solid #172c2e;
+    background-color: rgb(221, 80, 202);
+    outline: none;
+}
+
+#phone:focus{
+     border: 5px solid #cdbb48;
+    background-color: rgb(59, 197, 116);
+    outline: none;
+    color: brown;
+}
