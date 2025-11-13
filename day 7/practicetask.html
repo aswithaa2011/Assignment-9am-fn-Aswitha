@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>boxmodel</title>
+
+    <style>
+        body{
+          text-align: center;
+        }
+       
+
+      .box1 {
+        border: 5px dotted rgb(199, 255, 192);
+        margin: 10px;
+        width: 400px;
+        height: 100px;
+        padding: 40px;
+        box-sizing: border-box ;
+        
+        
+
+        }
+
+        .box2{
+              border: 5px dashed pink;
+              margin: 10px;
+              width:400px;
+        height: 100px;
+          padding: 70px;
+          box-sizing: border-box;
+        
+        }
+        .box3{
+              border: 5px solid rgb(22, 28, 142);
+              margin: 10px;
+              width: 400px;
+                padding: 50px;
+        height: 100px;
+        box-sizing: content-box;
+        
+        }
+    </style>
+</head>
+
+<body>
+    <h1>BOX MODEL</h1>
+    <div class="box1"> BOX1</div>
+    <div class="box2">BOX2</div>
+    <div class="box3">BOX3</div>
+   
+    
+</body>
+</html>
