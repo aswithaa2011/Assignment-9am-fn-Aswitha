@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Positioning </title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #f2f2f2;
+
+            .banner {
+                background: linear-gradient(135deg, #6a5acd, #836fff);
+                color: white;
+                padding: 40px;
+                text-align: center;
+
+
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+            }
+
+            .container {
+                width: 90%;
+                margin: 40px auto;
+                position: relative;
+            }
+
+            .box {
+                width: 180px;
+                height: 120px;
+                padding: 10px;
+                color: white;
+                border-radius: 10px;
+                font-weight: bold;
+            }
+
+
+            .relative-box {
+                background: #ff6f61;
+                position: relative;
+                top: 20px;
+                left: 20px;
+            }
+
+
+            .absolute-box {
+                background: #4db6ac;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+
+            .fixed-box {
+                background: #fbc02d;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+            }
+
+
+            .spacer {
+                height: 600px;
+            }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="banner">
+        <h1>WELCOME TO MY PAGE</h1>
+        <p>Relative • Absolute • Fixed • Text Shadow</p>
+    </div>
+
+    <div class="container">
+
+
+        <div class="box relative-box">
+            Relative Position
+        </div>
+
+
+        <div class="box absolute-box">
+            Absolute Position
+        </div>
+
+    </div>
+
+
+    <div class="spacer"></div>
+
+    <div class="box fixed-box">
+        Fixed Box
+    </div>
+
+</body>
+
+</html>
