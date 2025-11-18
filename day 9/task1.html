@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .box {
+    padding: 10px;
+    margin: 10px 0;
+    background: #eaeaff;
+    border: 1px solid #ccc;
+}
+
+.inline span {
+    display: inline;
+    background: #d1ffd1;
+    padding: 4px;
+}
+
+.inline-block span {
+    display: inline-block;
+    width: 80px;
+    background: #ffd1d1;
+    padding: 6px;
+    margin: 4px;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <h2>Display Types</h2>
+
+    <div class="box inline">
+        <b>display: inline</b><br>
+        <span>A</span>
+        <span>B</span>
+        <span>C</span>
+    </div>
+
+    <div class="box inline-block">
+        <b>display: inline-block</b><br>
+        <span>One</span>
+        <span>Two</span>
+        <span>Three</span>
+    </div>
+
+    <div class="box block">
+        <b>display: block</b>
+        <div>Block A</div>
+        <div>Block B</div>
+    </div>
+
+
+</body>
+</html>
