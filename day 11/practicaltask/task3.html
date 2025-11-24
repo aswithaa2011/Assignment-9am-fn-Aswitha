@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Layout</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f4f7;
+        }
+
+        .dashboard {
+            display: grid;
+
+            
+            grid-template-areas:
+                "sidebar header"
+                "sidebar main"
+                "sidebar widgets"
+                "sidebar footer";
+
+        
+            grid-template-columns: 250px 1fr;
+
+            grid-template-rows: auto 1fr auto auto;
+
+            min-height: 100vh;
+            gap: 15px;
+            padding: 15px;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background: #2c3e50;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .header {
+            grid-area: header;
+            background: #3498db;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            font-size: 18px;
+        }
+
+        .main {
+            grid-area: main;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .widgets {
+            grid-area: widgets;
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .footer {
+            grid-area: footer;
+            background: #bdc3c7;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard">
+        <div class="sidebar">Sidebar Navigation</div>
+        <div class="header">Dashboard Header</div>
+        <div class="main">Main Content Area</div>
+        <div class="widgets">Widgets Area (Charts / Cards)</div>
+        <div class="footer">Footer</div>
+    </div>
+
+</body>
+</html>
