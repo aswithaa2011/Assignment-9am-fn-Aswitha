@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+.container {
+    border: 2px solid black;
+    padding: 10px;
+}
+
+
+.container::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.img-left {
+    float: left;
+    width: 150px;
+    margin-right: 10px;
+}
+
+.img-right {
+    float: right;
+    width: 150px;
+    margin-left: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <img class="img-left" src="bk.jpg">
+    <img class="img-right" src="eating.jpg">
+    <p>This is text between two floated images. Clearfix prevents layout breaking.</p>
+</div>
+
+</body>
+</html>
+
