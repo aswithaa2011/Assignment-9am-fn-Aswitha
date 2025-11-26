@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrated Bootstrap Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+    <a class="navbar-brand" href="#"><i class="bi bi-person-circle"></i> Portfolio</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-images"></i> Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-question-circle"></i> FAQ</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactModal"><i class="bi bi-envelope"></i> Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container py-5 text-center">
+    <h2 class="mb-4">Gallery Carousel</h2>
+
+    <div id="galleryCarousel" class="carousel slide w-50 mx-auto mb-5">
+        <div class="carousel-inner">
+            <div class="carousel-item active"><img src="https://picsum.photos/600/300?1" class="d-block w-100"></div>
+            <div class="carousel-item"><img src="https://picsum.photos/600/300?2" class="d-block w-100"></div>
+            <div class="carousel-item"><img src="https://picsum.photos/600/300?3" class="d-block w-100"></div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <h2 class="mb-4">FAQ Section</h2>
+
+    <div class="accordion w-50 mx-auto mb-5" id="faq">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#q1">What services do you provide?</button>
+            </h2>
+            <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#faq">
+                <div class="accordion-body">Web development, UI/UX design, and portfolio building.</div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q2">How can I contact you?</button>
+            </h2>
+            <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faq">
+                <div class="accordion-body">You can reach me by using the contact form in the popup modal.</div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="mb-4">Product Showcase</h2>
+
+    <div class="card mx-auto mb-5" style="max-width: 400px;">
+        <div id="productCarousel" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active"><img src="https://picsum.photos/400/250?10" class="d-block w-100"></div>
+                <div class="carousel-item"><img src="https://picsum.photos/400/250?11" class="d-block w-100"></div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+        <div class="p-3 text-center">
+            <h4>Premium Product</h4>
+            <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#details">More Details</button>
+            <div id="details" class="collapse mt-3">
+                High-quality product with excellent performance and design.
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="modal fade" id="contactModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Contact Form</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control mb-3" placeholder="Your Name">
+                <input type="email" class="form-control mb-3" placeholder="Email">
+                <textarea class="form-control mb-3" rows="4" placeholder="Message"></textarea>
+                <button class="btn btn-success w-100">Send Message</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-dark text-white text-center p-3 mt-5">
+    <p><i class="bi bi-facebook"></i> <i class="bi bi-instagram mx-2"></i> <i class="bi bi-twitter"></i></p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
