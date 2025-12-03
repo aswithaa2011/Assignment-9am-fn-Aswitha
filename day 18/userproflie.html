@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Userprofile</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: antiquewhite;
+        }
+
+        img {
+            margin: 10px;
+            width: 200px;
+            height: 120px;
+            border-radius: 50%;
+        }
+
+        .name {
+            font-style: oblique;
+            font-size: 20px;
+            padding: 5px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .mail {
+            opacity: 0.3;
+        }
+
+        .profile-box {
+            margin-top: 20px;
+            width: 350px;
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 18px 0;
+        }
+
+        .label {
+            font-weight: bold;
+            font-size: 16px;
+            width: 120px;
+            color: #333;
+        }
+
+        .value {
+            font-size: 16px;
+            color: #555;
+            flex: 1;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 15px;
+            cursor: pointer;
+            border: none;
+            background: #333;
+            color: white;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    
+    <div class="img">
+        <img id="profileImg" 
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQINyLwK0DzlT2COvdGDOOJ9X8j0vlh4bwg2g&s" alt="">
+    </div>
+
+    <div class="name">
+        <div id="displayName" class="nm">ASWITHA</div>
+        <div id="displayMail" class="mail">@aswithagmail.com</div>
+    </div>
+
+        
+    <div class="profile-box">
+
+        <div class="info">
+            <div class="label">Username</div>
+            <div class="value" id="username">Aswitha</div>
+        </div>
+
+        <div class="info">
+            <div class="label">Email</div>
+            <div class="value" id="email">aswitha@gmail.com</div>
+        </div>
+
+        <div class="info">
+            <div class="label">Address</div>
+            <div class="value" id="address">Chennai, Ramapuram</div>
+        </div>
+
+        <div class="info">
+            <div class="label">DOB</div>
+            <div class="value" id="dob">Nov 20, 2002</div>
+        </div>
+
+    </div>
+
+    <button onclick="updateProfile()">Update Profile</button>
+
+    <script>
+    
+        const user = {
+            name: "ASWITHA",
+            username: "Aswitha",
+            email: "aswitha@gmail.com",
+            address: "Chennai, Ramapuram",
+            dob: "Nov 20, 2002",
+            profilePic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQINyLwK0DzlT2COvdGDOOJ9X8j0vlh4bwg2g&s"
+        };
+
+        function displayUser() {
+            document.getElementById("displayName").innerText = user.name;
+            document.getElementById("displayMail").innerText = "@" + user.username.toLowerCase();
+            document.getElementById("username").innerText = user.username;
+            document.getElementById("email").innerText = user.email;
+            document.getElementById("address").innerText = user.address;
+            document.getElementById("dob").innerText = user.dob;
+            document.getElementById("profileImg").src = user.profilePic;
+        }
+        displayUser();
+
+    
+        function updateProfile() {
+            user.name = "Aswitha K";
+            user.username = "aswitha_k";
+            user.email = "aswitha.k@gmail.com";
+            user.address = "Tamil Nadu, India";
+            user.dob = "Dec 1, 2002";
+
+
+            displayUser();
+        }
+    </script>
+
+</body>
+
+</html>
