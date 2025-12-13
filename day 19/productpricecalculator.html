@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Price Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f3f3f3;
+        }
+
+        .box {
+            background: white;
+            padding: 20px;
+            width: 320px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: 1px solid #aaa;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            border: none;
+            background: #333;
+            color: white;
+            border-radius: 8px;
+        }
+
+        .result {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h3>Product Price Calculator</h3>
+
+    <input type="text" id="product" placeholder="Enter Product Name">
+
+    <input type="text" id="price" placeholder="Enter Price (string)">
+    <input type="text" id="quantity" placeholder="Enter Quantity (string)">
+
+    <button onclick="calculateTotal()">Calculate Total</button>
+
+    <div class="result" id="result"></div>
+</div>
+
+    <script>
+        
+
+         
+
+        
+function calculateTotal() {
+
+    const product = document.getElementById("product").value;
+    const priceSTR = document.getElementById("price").value;
+    const quantitySTR = document.getElementById("quantity").value
+
+
+    let price = Number(priceSTR);
+    let quantity = parseInt(quantitySTR);
+
+    let total = price * quantity;
+
+
+    let totalStr = total.toString();
+
+    document.getElementById("result").innerText =
+        "Product: " + product + " | Total Price: ₹" + totalStr;
+}
+
+        
+    </script>
+    
+</body>
+</html>
