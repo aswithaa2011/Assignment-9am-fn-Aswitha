@@ -23,26 +23,32 @@
 
 //Create an object with 3 properties and print them.
 
- // objects
+// const marks = {
+// maths:"20",
+// english:"50",
+// language:"90"
 
+// };
 
-//  const student={
-//     name:"ASWITHA",
-//     age:"23",
-//     Course:"FS"
-//  }
-//  console.log(student);
- 
-//Convert "45" to a number.
+// console.log(marks.maths)
 
-// let num=Number("45")
+// const num=Number("100")
 
 // console.log(num);
 
+// converting using toString()
 
 
+// let exp= false;
+
+// let chn=exp.toString();
+
+// console.log(chn);
 
 
+//converting without toString()
 
+// let exp =false;
+// let chn=String(exp);
 
-
+// console.log(chn);
