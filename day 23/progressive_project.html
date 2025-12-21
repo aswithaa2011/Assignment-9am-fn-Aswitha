@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OOP Shopping App</title>
+  <style>
+    body {
+  font-family: Arial;
+  background: #f2f2f2;
+  display: flex;
+  gap: 20px;
+  padding: 40px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  width: 220px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+button {
+  padding: 8px 12px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>User Info</h2>
+    <p id="userInfo"></p>
+  </div>
+
+  <div class="card">
+    <h2>Product</h2>
+    <p id="productInfo"></p>
+    <button onclick="addToCart()">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <h2>Cart</h2>
+    <p id="cartInfo"></p>
+  </div>
+
+<script >
+const product = {
+  name: "Headphones",
+  price: 2000
+};
+
+
+class User {
+  constructor(name, email) {
+    this.name = name;
+    this.email = email;
+  }
+}
+
+
+class Customer extends User {
+  constructor(name, email) {
+    super(name, email);
+    this.cart = [];
+  }
+
+  addItem(item) {
+    this.cart.push(item);
+  }
+}
+
+const customer = new Customer("Aswitha", "aswitha@gmail.com");
+
+
+const { name, price } = product;
+
+document.getElementById("userInfo").innerText =
+  `${customer.name} (${customer.email})`;
+
+document.getElementById("productInfo").innerText =
+  `${name} - ₹${price}`;
+
+function addToCart() {
+  customer.addItem(product);
+
+  document.getElementById("cartInfo").innerText =
+    `Items in cart: ${customer.cart.length}`;
+}
+</script>
+</body>
+</html>
