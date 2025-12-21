@@ -1,0 +1,56 @@
+
+<!-- const area=(l,w)=>{
+    return `area of rectangle = ${l*w}`
+
+}
+
+console.log(area(5,4)); -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: grid;
+            grid-template-columns: 1fr;
+            width: 20%;
+            gap: 10px;
+            padding: 10px;
+            }
+    </style>
+</head>
+
+<body>
+    
+
+    <input type="text"  placeholder="Enter the width " id="W">
+    <input type="text" placeholder="Enter the Length" id="L">
+
+  <button onclick="AREA()">SHOW AREA</button>
+
+    <p id="result"></p>
+
+  
+    <script>
+        function AREA(){
+          let result="";
+
+          const Length=Number(document.getElementById("L").value)
+                    const width=Number(document.getElementById("W").value)
+
+                    result=document.getElementById("result").innerHTML= "AREA OF RECTANGLE "+ Length*width;
+
+
+
+        }
+       
+
+
+
+    </script>
+</body>
+</html>
