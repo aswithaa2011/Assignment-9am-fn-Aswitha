@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle</title>
+</head>
+
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-size: 20px;
+        transition: 0.4s;
+    }
+
+    .dark {
+        background-color: black;
+        color: white;
+    }
+
+    button {
+        outline: none;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: rgb(48, 47, 47);
+        color: white;
+        width: 150px;
+        height: 30px;
+    }
+</style>
+
+<body>
+
+
+    <h1>Dark Mode</h1>
+
+    <p id="para">Click the button to toggle Dark Mode</p>
+
+    <button id="mode">🌙 Dark Mode</button>
+
+
+
+    <script>
+
+        let btn = document.getElementById("mode")
+        let para = document.getElementById("para")
+
+        btn.addEventListener("click", () => {
+
+            document.body.classList.toggle("dark")
+
+            if (document.body.classList.contains("dark")) {
+
+                btn.textContent = "☀️ Light Mode"
+                para.textContent = "Click the button to toggle Light Mode"
+                btn.style.color = "black"
+                btn.style.background = "white"
+
+            }
+            else {
+                btn.textContent = "🌙 Dark Mode"
+                para.textContent = "Click the button to toggle Dark Mode"
+                btn.style.color = "white"
+                btn.style.background = "black"
+
+
+            }
+        })
+    </script>
+</body>
+
+</html>

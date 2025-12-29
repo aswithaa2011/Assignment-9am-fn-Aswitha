@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event handler & DOM </title>
+</head>
+<body>
+    
+
+    <h1 id="head">Helooo</h1>
+
+    <p>This is a p element.</p>
+<p>This is a p element.</p>
+
+    <button id="btn">change heading</button>
+    <button id="bg">background color</button>
+    <button id="para" >para bg</button>
+
+    <button id="items"> show items</button>
+
+    <button onclick="remove()">remove</button>
+
+    <ul id="list"></ul>
+
+    
+
+    <script>
+
+
+    
+    document.getElementById('btn').addEventListener("click",function(){
+        document.getElementById('head').innerHTML="WELCOME........"
+    })
+   
+    document.getElementById("para").addEventListener("click",function(){
+        document.querySelectorAll('p').forEach(p=>{
+            p.style.background="pink"
+        })
+    })
+
+    document.getElementById("bg").addEventListener("click",function(){
+
+        document.body.style.background="#c678d0"
+        })
+
+        
+
+document.getElementById('items').addEventListener("click", function () {
+
+    const products = [
+        { name: "Laptop", price: 50000 },
+        { name: "Mobile", price: 20000 },
+        { name: "Headphones", price: 3000 },
+        { name: "Keyboard", price: 1500 }
+    ];
+
+    let ul = document.getElementById("list");
+    ul.innerHTML=""
+    
+
+    products.forEach(product => {
+
+        let li = document.createElement("li");
+        li.textContent = `product : ${product.name} , price : ${product.price}`;
+     
+
+        ul.appendChild(li);
+
+       
+    });
+});
+
+function remove(){
+ const firstItem=document.querySelector("#list li")
+
+ if(firstItem){
+    firstItem.remove()
+ }
+}
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <Button id="btn">click here</Button>
+
+    <p id="para">change text colour</p>
+
+
+    <script>
+       const btn = document.getElementById("btn");
+        const para = document.getElementById("para");
+
+        btn.addEventListener('click',()=>{
+            alert("Welcome ")
+        })
+
+        btn.addEventListener("mouseover", () => {
+            para.style.color = "red";
+        });
+
+        btn.addEventListener("mouseout", () => {
+            para.style.color = "black";
+        });
+
+
+    </script>
+</body>
+</html>
