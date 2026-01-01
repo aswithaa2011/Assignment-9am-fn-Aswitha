@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button{
+        border: 1px solid rgb(229, 224, 127);
+        background-color: rgb(209, 135, 177) ;
+        height: 30px;
+        border-radius: 20px;
+        padding: 10px;
+
+    }
+</style>
+<body>
+
+    <h2>Click tracker app</h2>
+
+    <button id="incre" >Increment</button>
+
+    <button id="decre">Decrement</button>
+    <button id="reset">Reset</button>
+    
+    <p id="res"></p>
+
+
+
+    <script>
+             let count =0
+             let res=  document.getElementById("res")
+
+             document.getElementById("incre").addEventListener("click",()=>{
+                 count++
+                 res.innerText=count
+                  document.body.style.color="green"
+                 
+             })
+                
+             document.getElementById("decre").addEventListener("click",()=>{
+                 count--
+                 res.innerText=count
+                 document.body.style.color="red"
+                 
+             })
+
+             
+             document.getElementById("reset").addEventListener("click",()=>{
+                 count=0
+                 res.innerText=count
+                  document.body.style.color="blue"
+                 
+             })
+
+    </script>
+
+</body>
+</html> 

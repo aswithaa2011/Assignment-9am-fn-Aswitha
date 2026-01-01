@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Hover Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 50px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .menu {
+      display: flex;
+      gap: 30px;
+      background: #333;
+      padding: 15px 30px;
+      border-radius: 8px;
+      width: fit-content;
+    }
+
+    .menu > li {
+      position: relative;
+      color: white;
+      cursor: pointer;
+    }
+
+    .submenu {
+      position: absolute;
+      top: 40px;
+      left: 0;
+      background: white;
+      color: black;
+      border-radius: 6px;
+      min-width: 150px;
+      display: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .submenu li {
+      padding: 10px 20px;
+    }
+
+    .submenu li:hover {
+      background: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+
+<ul class="menu">
+  <li>Home</li>
+
+  <li class="has-sub">
+    Services
+    <ul class="submenu">
+      <li>Web Design</li>
+      <li>Development</li>
+      <li>SEO</li>
+    </ul>
+  </li>
+
+  <li class="has-sub">
+    Products
+    <ul class="submenu">
+      <li>Apps</li>
+      <li>Templates</li>
+      <li>Plugins</li>
+    </ul>
+  </li>
+
+  <li>Contact</li>
+</ul>
+
+<script>
+  const items = document.querySelectorAll(".has-sub");
+
+  items.forEach(item => {
+    item.addEventListener("mouseenter", () => {
+      item.querySelector(".submenu").style.display = "block";
+    });
+
+    item.addEventListener("mouseleave", () => {
+      item.querySelector(".submenu").style.display = "none";
+    });
+  });
+</script>
+
+</body>
+</html>
