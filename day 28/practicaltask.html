@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Error Handling Project</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      padding: 20px;
+    }
+
+    .box {
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      max-width: 400px;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+
+    .success {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+
+<div class="box">
+  <h3>Login Form</h3>
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="login()">Login</button>
+  <p id="loginMsg"></p>
+</div>
+
+
+<div class="box">
+  <h3>Calculator</h3>
+  <input type="number" id="num1" placeholder="Number 1">
+  <input type="number" id="num2" placeholder="Number 2">
+  <button onclick="calculate()">Divide</button>
+  <p id="calcMsg"></p>
+</div>
+
+<div class="box">
+  <h3>Debug Section</h3>
+  <button onclick="debugApp()">Run Debug</button>
+  <p id="debugMsg"></p>
+</div>
+
+
+<div class="box">
+  <h3>Age Validation</h3>
+  <input type="text" id="age" placeholder="Enter age">
+  <button onclick="validateAge()">Check</button>
+  <p id="ageMsg"></p>
+</div>
+
+<script>
+
+  function login() {
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+    const msg = document.getElementById("loginMsg");
+
+    if (user === "" || pass === "") {
+      msg.textContent = "All fields are required";
+      msg.className = "error";
+      return;
+    }
+
+    if (user === "admin" && pass === "1234") {
+      msg.textContent = "Login successful";
+      msg.className = "success";
+    } else {
+      msg.textContent = "Invalid credentials";
+      msg.className = "error";
+    }
+  }
+
+  
+  function calculate() {
+    const n1 = Number(document.getElementById("num1").value);
+    const n2 = Number(document.getElementById("num2").value);
+    const msg = document.getElementById("calcMsg");
+
+    if (isNaN(n1) || isNaN(n2)) {
+      msg.textContent = "Enter valid numbers";
+      msg.className = "error";
+      return;
+    }
+
+    if (n2 === 0) {
+      msg.textContent = "Cannot divide by zero";
+      msg.className = "error";
+      return;
+    }
+
+    msg.textContent = "Result: " + (n1 / n2);
+    msg.className = "success";
+  }
+
+  
+  function debugApp() {
+    let data = null;
+
+    console.log("Data value:", data);
+
+    if (!data) {
+      document.getElementById("debugMsg").textContent =
+        "Error fixed: data was null";
+      return;
+    }
+
+    document.getElementById("debugMsg").textContent = data.length;
+  }
+
+  
+  function validateAge() {
+    const age = document.getElementById("age").value;
+    const msg = document.getElementById("ageMsg");
+
+    if (age === "") {
+      msg.textContent = "Age is required";
+      msg.className = "error";
+      return;
+    }
+
+    if (isNaN(age)) {
+      msg.textContent = "Age must be a number";
+      msg.className = "error";
+      return;
+    }
+
+    if (age < 18) {
+      msg.textContent = "Not eligible";
+      msg.className = "error";
+    } else {
+      msg.textContent = "Eligible";
+      msg.className = "success";
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Error Finding Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .quiz-box {
+      background: #fff;
+      padding: 20px;
+      width: 400px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 8px;
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .correct {
+      background: #c8f7c5;
+    }
+
+    .wrong {
+      background: #f7c5c5;
+    }
+  </style>
+</head>
+<body>
+
+<div class="quiz-box">
+  <h3 id="question"></h3>
+  <pre id="code"></pre>
+  <div id="options"></div>
+  <p id="result"></p>
+  <p><strong>Score:</strong> <span id="score">0</span></p>
+</div>
+
+<script>
+  const quiz = [
+    {
+      question: "What is the error?",
+      code: `function greet() {
+  console.log("Hello"
+}`,
+      options: [
+        "Missing semicolon",
+        "Missing closing bracket",
+        "Missing quotation mark",
+        "No error"
+      ],
+      answer: 2
+    },
+    {
+      question: "What type of error is this?",
+      code: `let name;
+console.log(name.toUpperCase());`,
+      options: [
+        "Syntax Error",
+        "Logical Error",
+        "Runtime Error",
+        "Reference Error"
+      ],
+      answer: 2
+    },
+    {
+      question: "Find the mistake",
+      code: `if (age > 18 && age < 18) {
+  console.log("Eligible");
+}`,
+      options: [
+        "Syntax Error",
+        "Condition is always false",
+        "Missing else block",
+        "age not defined"
+      ],
+      answer: 1
+    }
+  ];
+
+  let current = 0;
+  let score = 0;
+
+  function loadQuiz() {
+    document.getElementById("result").textContent = "";
+    document.getElementById("question").textContent = quiz[current].question;
+    document.getElementById("code").textContent = quiz[current].code;
+
+    const optionsDiv = document.getElementById("options");
+    optionsDiv.innerHTML = "";
+
+    quiz[current].options.forEach((opt, index) => {
+      const btn = document.createElement("button");
+      btn.textContent = opt;
+      btn.onclick = () => checkAnswer(index, btn);
+      optionsDiv.appendChild(btn);
+    });
+  }
+
+  function checkAnswer(index, btn) {
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach(b => b.disabled = true);
+
+    if (index === quiz[current].answer) {
+      btn.classList.add("correct");
+      score++;
+      document.getElementById("score").textContent = score;
+      document.getElementById("result").textContent = "Correct ✅";
+    } else {
+      btn.classList.add("wrong");
+      document.getElementById("result").textContent = "Wrong ❌";
+    }
+
+    setTimeout(() => {
+      current++;
+      if (current < quiz.length) {
+        loadQuiz();
+      } else {
+        document.querySelector(".quiz-box").innerHTML =
+          `<h2>Quiz Completed 🎉</h2>
+           <p>Your Score: ${score}/${quiz.length}</p>`;
+      }
+    }, 1000);
+  }
+
+  loadQuiz();
+</script>
+
+</body>
+</html>

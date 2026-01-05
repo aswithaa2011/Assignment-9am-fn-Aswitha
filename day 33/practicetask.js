@@ -84,3 +84,26 @@
 // Components in React 
 
 //components is a reusable piece of UI return as js function that returns JSX
+
+
+//                 App
+//                  │
+//      ┌───────────┼───────────┐
+//      │           │           │
+//    Header       Main       Footer
+//      │            │
+//  ┌───┴───┐    ┌───┴───────────┐
+//  │       │    │               │
+// Logo    Nav  Sidebar        Content
+//                                 │
+//                         ┌───────┴────────┐
+//                         │                │
+//                       Post            Comment
+
+// App → Root component
+
+// Header, Main, Footer → Direct children of App
+
+// Content → Nested inside Main
+
+// Post & Comment → Children of Content
