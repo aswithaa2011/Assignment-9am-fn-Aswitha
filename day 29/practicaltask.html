@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Concepts Demo</title>
+</head>
+<body>
+
+<button id="loginBtn">Login</button>
+<button id="addItem">Add Item</button>
+<button id="totalBtn">Calculate Total</button>
+
+<script>
+  const loginCounter = () => {
+    let count = 0
+    return () => {
+      count++
+      console.log("Login count:", count)
+    }
+  }
+
+  const login = loginCounter()
+  document.getElementById("loginBtn").onclick = login
+
+  const fakeApi = () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({ id: 1, name: "Aswitha" })
+      }, 1000)
+    })
+  }
+
+  async function fetchUser() {
+    try {
+      const user = await fakeApi()
+      console.log("User Data:", user)
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
+  fetchUser()
+
+  let cart = []
+
+  document.getElementById("addItem").onclick = () => {
+    const item = { id: cart.length + 1, price: 100 }
+    cart = [...cart, item]
+    console.log("Cart:", cart)
+  }
+
+  function calculateTotal(...prices) {
+    return prices.reduce((sum, p) => sum + p, 0)
+  }
+
+  document.getElementById("totalBtn").onclick = () => {
+    const prices = cart.map(i => i.price)
+    console.log("Total:", calculateTotal(...prices))
+  }
+</script>
+
+</body>
+</html>

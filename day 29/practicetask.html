@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button id="btn">Click me</button>
+
+<script>
+function createClickCounter() {
+  let count = 0
+  return function () {
+    count++
+    return count
+  }
+}
+
+const countClick = createClickCounter()
+
+document.getElementById("btn").addEventListener("click", () => {
+  console.log("Button clicks:", countClick())
+})
+
+function delayedMessage(callback) {
+  setTimeout(() => {
+    callback("Hello after 2 seconds (callback)")
+  }, 2000)
+}
+
+delayedMessage((msg) => {
+  console.log(msg)
+})
+
+function delayedMessagePromise() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Hello after 2 seconds (promise)")
+    }, 2000)
+  })
+}
+
+async function showMessage() {
+  try {
+    const msg = await delayedMessagePromise()
+    console.log(msg)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+showMessage()
+
+const user = {
+  name: "Aswitha",
+  age: 22,
+  role: "Developer"
+}
+
+const { name, role } = user
+console.log(name, role)
+</script>
+</body>
+</html>
