@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Async JavaScript Examples</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+    h2 {
+      color: #333;
+    }
+    .box {
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-left: 5px solid #4caf50;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Asynchronous JavaScript</h2>
+
+<div class="box">
+  Open Console (F12) to see output
+</div>
+
+<script>
+function showMessage(callback) {
+  setTimeout(() => {
+    callback("Callback: Message after 3 seconds");
+  }, 3000);
+}
+
+showMessage((msg) => {
+  console.log(msg);
+});
+
+function callbackToPromise() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Converted callback to Promise");
+    }, 1000);
+  });
+}
+
+callbackToPromise().then((res) => console.log(res));
+
+const twoSecondPromise = new Promise((resolve) => {
+  setTimeout(() => {
+    resolve("Promise resolved after 2 seconds");
+  }, 2000);
+});
+
+twoSecondPromise.then(console.log);
+
+const rejectedPromise = new Promise((_, reject) => {
+  reject("Something went wrong!");
+});
+
+rejectedPromise
+  .then(console.log)
+  .catch((err) => console.error("Caught error:", err));
+
+async function asyncExample() {
+  const result = await twoSecondPromise;
+  console.log("Async/Await result:", result);
+}
+
+asyncExample();
+
+async function errorHandlingExample() {
+  try {
+    await rejectedPromise;
+  } catch (error) {
+    console.error("Handled with try/catch:", error);
+  }
+}
+
+errorHandlingExample();
+
+function randomPromise() {
+  return new Promise((resolve, reject) => {
+    const success = Math.random() > 0.5;
+    setTimeout(() => {
+      success ? resolve("Random Success!") : reject("Random Failure!");
+    }, 1000);
+  });
+}
+
+randomPromise()
+  .then(console.log)
+  .catch(console.error);
+
+new Promise((resolve) => {
+  resolve(10);
+})
+.then((num) => {
+  console.log("First then:", num);
+  return num * 2;
+})
+.then((result) => {
+  console.log("Second then:", result);
+});
+
+const promise1 = new Promise((resolve) =>
+  setTimeout(() => resolve("Promise 1 done"), 1000)
+);
+
+const promise2 = new Promise((resolve) =>
+  setTimeout(() => resolve("Promise 2 done"), 2000)
+);
+
+async function waitForBoth() {
+  const res1 = await promise1;
+  const res2 = await promise2;
+  console.log(res1);
+  console.log(res2);
+}
+
+waitForBoth();
+</script>
+
+</body>
+</html>

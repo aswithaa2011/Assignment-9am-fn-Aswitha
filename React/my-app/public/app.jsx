@@ -1,9 +1,8 @@
 import { Routes, Route } from "react-router-dom"
-import Navbar from "./components/Navbar"
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Contact from "./pages/Contact"
-import User from "./pages/User"
+import Navbar from "./components/Navbar"
 
 function App() {
   return (
@@ -13,8 +12,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/user/:id" element={<User />} />
-        <Route path="*" element={<h1>404 Page Not Found</h1>} />
       </Routes>
     </>
   )

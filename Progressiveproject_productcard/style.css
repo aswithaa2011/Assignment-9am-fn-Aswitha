@@ -1,34 +1,114 @@
-*{
-    font-family:Arial, Helvetica, sans-serif;
-    background-color: rgb(251, 248, 248);
-    justify-content: center;
-    text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.container{
- display: grid;
- grid-template-columns: 1fr 1fr ;
- justify-content: center;
- gap:20px;
- width: 800px;
+body {
+  background-color: rgb(251, 248, 248);
+}
 
+/* NAVBAR */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+  color: rgb(178, 56, 109);
+}
+
+.logo span {
+  color: rgb(103, 103, 187);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.nav-actions img {
+  height: 30px;
+}
+
+/* BUTTON */
+.btn {
+  padding: 10px 20px;
+  background-color: rgb(178, 56, 109);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* POPUP */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+}
+
+.popup:target {
+  display: block;
+}
+
+.popup-box {
+  background-color: white;
+  width: 250px;
+  padding: 20px;
+  margin: 150px auto;
+  border-radius: 8px;
+  position: relative;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
 }
 
 
-.product-card{
-border-radius: 10px;
-border:2px solid rgb(208, 182, 182);
-padding: 5px;
-background-color:white;
-width: 300px;
-
-
+.grid-box{
+    display:grid;
+    
+    
+    
+}
+.bx1{
+  height: 1px;
+  background-color: black;
+  
 
 }
 
-button{
-    border-radius: 20px;
-    width: 50%;
-    height: 30px;
-    background-color: burlywood;
+/* SLIDER */
+.slider-bg img {
+  height: 600px;
+  width: 100%;
+  object-fit: cover;
 }
