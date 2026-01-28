@@ -1,220 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
+  <title>StyleAURA | Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title favicom>StyleAURA</title>
 
+  <!-- Common CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Page specific styles -->
   <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-
-      box-sizing: border-box;
-      text-align: center;
-    }
-
     .container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
-
-      padding: 20px;
-
-      border-radius: 12px;
-
+      padding: 30px;
+      justify-items: center;
     }
-
 
     .product-card {
       width: 300px;
-      height: 400px;
-      padding: 10px;
+      height: 420px;
+      padding: 15px;
       border-radius: 10px;
       border: 2px solid rgb(208, 182, 182);
       background-color: white;
-      justify-self: center;
-
-
-
+      text-align: center;
     }
 
-    img {
+    .product-card img {
       width: 200px;
       height: 200px;
-      border-radius: 15PX;
+      border-radius: 12px;
     }
 
-    button {
+    .description {
+      color: rgb(173, 137, 156);
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .price {
+      color: rgb(178, 56, 109);
+      margin: 8px 0;
+    }
+
+    .price span {
+      color: rgb(103, 103, 187);
+    }
+
+    .add-cart {
       border-radius: 20px;
-      width: 50%;
-      height: 30px;
+      width: 60%;
+      height: 35px;
       background-color: burlywood;
       border: none;
       cursor: pointer;
+      margin-top: 10px;
     }
 
-    button:focus{
-      outline: none;
-      box-shadow: 0 0 0 2px rgba(200, 155, 92, 0.6);
+    .add-cart:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
     }
-
-    span{
-      color: rgb(103, 103, 187);
-    }
-    .price{
-      color: rgb(178, 56, 109);
-      display: flex;
-      flex-direction: column;
-      gap:2px;
-    }
-
-    .description{
-      color:  rgb(173, 137, 156);
-      font-size: 13px;
-      font-weight: bold;
-    
-    }
-    .nav{
-      display: flex;
-      flex-direction: row;
-      gap:20px;
-      height: 100px;
-    }
-
-    #tit{
-      float: left;
-      margin-left: 20px;
-      width: 200px;
-      color: pink;
-      font-size: 25px;
-
-
-    }
-
-    li{
-      margin-right:20px;
-      display: inline-block;
-      
-    }
-    #login{
-        width:200px
-    }
-    #signup{
-        width: 200px;
-    }
-    
   </style>
 </head>
 
 <body>
 
-<nav class="nav"> 
-     <p id="tit">Style<span id="aura">Aura</span></p>
-     <ul>
-      <li>Home</li>
+<!-- NAVBAR -->
+<nav class="nav">
+  <p class="logo">Style<span>Aura</span></p>
 
-<li>Shop</li>
-<li>New Arrivals</li>
-<li>Categories</li>
-<li>About</li>
-<li>Contact</li>
+  <ul class="nav-links">
+    <li><a href="home.html">Home</a></li>
+    <li><a href="#">Shop</a></li>
+    <li><a href="#">New Arrivals</a></li>
+    <li><a href="#">Categories</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
 
+  <div class="nav-actions">
+    <input type="text" placeholder="Search">
 
-
-
-
-
-
-
-     </ul>
-
-     <button id="login">Login </button>
-     <button id="signup" onclick="signup()">Sign up</button>
+    <a href="cart.html">
+      <img src="images/cart.png" alt="Cart">
+    </a>
+    
+  </div>
 </nav>
 
 
+<div class="container">
 
-  <div class="container">
+  <div class="product-card">
+    <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTuovMUsve5AGNzry91wv4j5vpaQ_X13AziENaUJq9pH_wIfFxy5yWNptRaad-4pHqet6K3MbVW1ic__rVCRqSe-PrmBIhX4y4CM_7pTsgH">
+    <h3>Western Dresses</h3>
+    <p class="description">Women's Multi-Color Layered Midi Dress</p>
+    <p class="price">₹2458 <span>50% Off</span></p>
 
-
-
-    <div class="product-card">
-      <img
-        src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTuovMUsve5AGNzry91wv4j5vpaQ_X13AziENaUJq9pH_wIfFxy5yWNptRaad-4pHqet6K3MbVW1ic__rVCRqSe-PrmBIhX4y4CM_7pTsgH"
-        alt="Product Image">
-      <h3>Western Dresses</h3>
-      <p  class="description">Women's Multi-Color All That Glitter Round Neck Layered Midi Dress</p>
-            <p  class="price">₹2,45859 <span>50% Off </span></p>
-
-      
-      <button>Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img
-        src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTkFFFJ2Gi-VtW4qTZcsdJq5ibViQSPHDCnz7GedCWiZz8_oZGxUAkUHpCCwBV3mSHkO2ub9NXUV4P1orqUPwacsZGznjgKwokYbtSKneZ2"
-        alt="Product Image">
-      <h3>Western Dresses</h3>
-      <p class="description">Women's Multi-Color All That Glitter Round Neck Layered Midi Dress</p>
-            <p class="price">₹2,45859 <span>50% Off </span></p>
-
-      <button>Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img
-        src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQqot_5bahpId8RnNL4FNT7jkk8WDnEs02TiJ50vrJ01T6klf_AZ03Npw8mBKE9Wx9oTSBJ0xR_bxIskuKaSMY05UIxNFVggDxc_fHzosgvzDirZnGaEhB-gg"
-        alt="Product Image">
-      <h3>Western Dresses</h3>
-      <p class="description" >Women's Multi-Color All That Glitter Round Neck Layered Midi Dress</p>
-            <p  class="price">₹2,45859 <span>50% Off </span></p>
-
-      <button>Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk5KTuwcILfOyadVWFoeVqH4WWzisiqpCAsgBpmWrjCdQOqRQNfGLkG8Q&s" alt="Product Image">
-      <h3>Western Dresses</h3>
-      <p class="description" >Women's Multi-Color All That Glitter Round Neck Layered Midi Dress</p>
-      <p  class="price">₹2,45859 <span>50% Off </span></p>
-      <button>Add to Cart</button>
-    </div>
-
-
-    <div class="product-card">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0u-0IE58sKePMY1jhvngVrejRxSsgI2eFmbHn0BbdqkntrVpPGmI8Mvk&s" alt="Product Image">
-      <h3>Western Dresses</h3>
-      <p class="description" >Women's Multi-Color All That Glitter Round Neck Layered Midi Dress</p>
-      <p  class="price">₹2,45859 <span>50% Off </span></p>
-      <button>Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS1JWvmFFo3a4MU7wLaQBWT6XGobhj-Lcq96PhOStdcRIql2QGTAv0CMY&s" alt="Product Image">
-      <h3>Western Dresses</h3>
-      <p class="description" >Women's Multi-Color All That Glitter Round Neck Layered Midi Dress</p>
-            <p  class="price">₹2,45859 <span>50% Off </span></p>
-
-      <button  class="price">Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5F12CvTQNj2YfeScFgMnJbIIqYHix017FBnFxTl0_hapATsjjXoXeIFk&s" alt="Product Image">
-      <h3>Western Dresses</h3>
-      <p class="description" >Women's Multi-Color All That Glitter Round Neck Layered Midi Dress</p>
-            <p  class="price">₹2,45859 <span>50% Off </span></p>
-
-      <button>Add to Cart</button>
-    </div>
+    <button 
+      class="add-cart"
+      data-id="1"
+      data-name="Western Dresses"
+      data-price="2458"
+      data-image="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTuovMUsve5AGNzry91wv4j5vpaQ_X13AziENaUJq9pH_wIfFxy5yWNptRaad-4pHqet6K3MbVW1ic__rVCRqSe-PrmBIhX4y4CM_7pTsgH">
+      Add to Cart
+    </button>
   </div>
-</body>
 
+  <div class="product-card">
+    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTkFFFJ2Gi-VtW4qTZcsdJq5ibViQSPHDCnz7GedCWiZz8_oZGxUAkUHpCCwBV3mSHkO2ub9NXUV4P1orqUPwacsZGznjgKwokYbtSKneZ2">
+    <h3>Western Dresses</h3>
+    <p class="description">Women's Party Wear Dress</p>
+    <p class="price">₹1899 <span>40% Off</span></p>
+
+    <button 
+      class="add-cart"
+      data-id="2"
+      data-name="Party Wear Dress"
+      data-price="1899"
+      data-image="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTkFFFJ2Gi-VtW4qTZcsdJq5ibViQSPHDCnz7GedCWiZz8_oZGxUAkUHpCCwBV3mSHkO2ub9NXUV4P1orqUPwacsZGznjgKwokYbtSKneZ2">
+      Add to Cart
+    </button>
+  </div>
+
+  <div class="product-card">
+    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQqot_5bahpId8RnNL4FNT7jkk8WDnEs02TiJ50vrJ01T6klf_AZ03Npw8mBKE9Wx9oTSBJ0xR_bxIskuKaSMY05UIxNFVggDxc_fHzosgvzDirZnGaEhB-gg">
+    <h3>Western Dresses</h3>
+    <p class="description">Women's Casual Midi Dress</p>
+    <p class="price">₹2099 <span>45% Off</span></p>
+
+    <button 
+      class="add-cart"
+      data-id="3"
+      data-name="Casual Midi Dress"
+      data-price="2099"
+      data-image="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQqot_5bahpId8RnNL4FNT7jkk8WDnEs02TiJ50vrJ01T6klf_AZ03Npw8mBKE9Wx9oTSBJ0xR_bxIskuKaSMY05UIxNFVggDxc_fHzosgvzDirZnGaEhB-gg">
+      Add to Cart
+    </button>
+  </div>
+
+
+<div class="product-card">
+    <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTuovMUsve5AGNzry91wv4j5vpaQ_X13AziENaUJq9pH_wIfFxy5yWNptRaad-4pHqet6K3MbVW1ic__rVCRqSe-PrmBIhX4y4CM_7pTsgH">
+    <h3>Western Dresses</h3>
+    <p class="description">Women's Multi-Color Layered Midi Dress</p>
+    <p class="price">₹2458 <span>50% Off</span></p>
+
+    <button 
+      class="add-cart"
+      data-id="1"
+      data-name="Western Dresses"
+      data-price="2458"
+      data-image="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTuovMUsve5AGNzry91wv4j5vpaQ_X13AziENaUJq9pH_wIfFxy5yWNptRaad-4pHqet6K3MbVW1ic__rVCRqSe-PrmBIhX4y4CM_7pTsgH">
+      Add to Cart
+    </button>
+  </div>
+
+  <div class="product-card">
+    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTkFFFJ2Gi-VtW4qTZcsdJq5ibViQSPHDCnz7GedCWiZz8_oZGxUAkUHpCCwBV3mSHkO2ub9NXUV4P1orqUPwacsZGznjgKwokYbtSKneZ2">
+    <h3>Western Dresses</h3>
+    <p class="description">Women's Party Wear Dress</p>
+    <p class="price">₹1899 <span>40% Off</span></p>
+
+    <button 
+      class="add-cart"
+      data-id="2"
+      data-name="Party Wear Dress"
+      data-price="1899"
+      data-image="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTkFFFJ2Gi-VtW4qTZcsdJq5ibViQSPHDCnz7GedCWiZz8_oZGxUAkUHpCCwBV3mSHkO2ub9NXUV4P1orqUPwacsZGznjgKwokYbtSKneZ2">
+      Add to Cart
+    </button>
+  </div>
+
+  <div class="product-card">
+    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQqot_5bahpId8RnNL4FNT7jkk8WDnEs02TiJ50vrJ01T6klf_AZ03Npw8mBKE9Wx9oTSBJ0xR_bxIskuKaSMY05UIxNFVggDxc_fHzosgvzDirZnGaEhB-gg">
+    <h3>Western Dresses</h3>
+    <p class="description">Women's Casual Midi Dress</p>
+    <p class="price">₹2099 <span>45% Off</span></p>
+
+    <button 
+      class="add-cart"
+      data-id="3"
+      data-name="Casual Midi Dress"
+      data-price="2099"
+      data-image="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQqot_5bahpId8RnNL4FNT7jkk8WDnEs02TiJ50vrJ01T6klf_AZ03Npw8mBKE9Wx9oTSBJ0xR_bxIskuKaSMY05UIxNFVggDxc_fHzosgvzDirZnGaEhB-gg">
+      Add to Cart
+    </button>
+  </div>
+  <div class="product-card">
+    <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTuovMUsve5AGNzry91wv4j5vpaQ_X13AziENaUJq9pH_wIfFxy5yWNptRaad-4pHqet6K3MbVW1ic__rVCRqSe-PrmBIhX4y4CM_7pTsgH">
+    <h3>Western Dresses</h3>
+    <p class="description">Women's Multi-Color Layered Midi Dress</p>
+    <p class="price">₹2458 <span>50% Off</span></p>
+
+    <button 
+      class="add-cart"
+      data-id="1"
+      data-name="Western Dresses"
+      data-price="2458"
+      data-image="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTuovMUsve5AGNzry91wv4j5vpaQ_X13AziENaUJq9pH_wIfFxy5yWNptRaad-4pHqet6K3MbVW1ic__rVCRqSe-PrmBIhX4y4CM_7pTsgH">
+      Add to Cart
+    </button>
+  </div>
+
+  <div class="product-card">
+    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTkFFFJ2Gi-VtW4qTZcsdJq5ibViQSPHDCnz7GedCWiZz8_oZGxUAkUHpCCwBV3mSHkO2ub9NXUV4P1orqUPwacsZGznjgKwokYbtSKneZ2">
+    <h3>Western Dresses</h3>
+    <p class="description">Women's Party Wear Dress</p>
+    <p class="price">₹1899 <span>40% Off</span></p>
+
+    <button 
+      class="add-cart"
+      data-id="2"
+      data-name="Party Wear Dress"
+      data-price="1899"
+      data-image="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTkFFFJ2Gi-VtW4qTZcsdJq5ibViQSPHDCnz7GedCWiZz8_oZGxUAkUHpCCwBV3mSHkO2ub9NXUV4P1orqUPwacsZGznjgKwokYbtSKneZ2">
+      Add to Cart
+    </button>
+  </div>
+
+  <div class="product-card">
+    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQqot_5bahpId8RnNL4FNT7jkk8WDnEs02TiJ50vrJ01T6klf_AZ03Npw8mBKE9Wx9oTSBJ0xR_bxIskuKaSMY05UIxNFVggDxc_fHzosgvzDirZnGaEhB-gg">
+    <h3>Western Dresses</h3>
+    <p class="description">Women's Casual Midi Dress</p>
+    <p class="price">₹2099 <span>45% Off</span></p>
+
+    <button 
+      class="add-cart"
+      data-id="3"
+      data-name="Casual Midi Dress"
+      data-price="2099"
+      data-image="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQqot_5bahpId8RnNL4FNT7jkk8WDnEs02TiJ50vrJ01T6klf_AZ03Npw8mBKE9Wx9oTSBJ0xR_bxIskuKaSMY05UIxNFVggDxc_fHzosgvzDirZnGaEhB-gg">
+      Add to Cart
+    </button>
+  </div>
+
+
+
+</div>
 
 <script>
-function signup(){
-  window.location.href="signup.html"
-}
 
+  
 </script>
+
+</body>
 </html>

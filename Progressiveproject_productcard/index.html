@@ -22,31 +22,58 @@
   </ul>
 
   <div class="nav-actions">
+
     <input type="text" placeholder="search">
 
-    <a href="#popup" class="btn">Sign up</a>
+    
+    <div class="signup-wrapper">
+      <a href="#popup" class="btn">Sign up</a>
+
+      <div id="popup" class="popup">
+        <div class="popup-box">
+          <a href="#" class="close">&times;</a>
+
+          <h2>LOGIN OR SIGN UP</h2>
+
+          <p>Register now and get 2000 Nykaa reward points instantly!</p>
+             <div class="mb-opt">
+  <input
+  type="tel"
+  id="mobile"
+  class="mb-num"
+  placeholder="Mobile Number"
+  pattern="[6-9][0-9]{9}"
+  maxlength="10"
+  inputmode="numeric"
+  required
+/>
+
+  <button class="otp" id="otp" disabled>Send OTP</button>
+</div>
+
+          <div class="grid-box">
+            <div class="bx1"></div>
+            <div class="bx2">Or sign in using</div>
+            <div class="bx1 "></div>   
+          </div>
+
+
+          <input type="text" class="mobile-email" placeholder="Sign in with Mobile / Email >">
+
+         <div class="google">
+  <span class="google-text">Continue with Google</span>
+  <img src="images/Google__G__logo.svg.png" alt="Google">
+</div>
+                
+
+        </div>
+      </div>
+    </div>
 
     <img src="images/cart.png" alt="Cart">
+
   </div>
 </nav>
-
-<div id="popup" class="popup">
-  <div class="popup-box">
-    <a href="#" class="close">&times;</a>
-    <h2>LOGIN OR SIGN UP</h2>
-
-    <P>Register now and get 2000 Nykaa reward points instantly!</P>
-    
-    <input type="text" placeholder="Mobile Number">
-
-    <div class="grid-box">
-      <div class="bx1"></div>
-        <div class="bx2" >Or sign in using</div>
-          <div class="bx1"></div>
-    </div>
-  
-  </div>
-</div>
 
 <section class="section1">
   <div class="slider-bg">

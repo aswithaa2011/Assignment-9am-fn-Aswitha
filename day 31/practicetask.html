@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>API & Storage Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    button {
+      margin: 5px 0;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>JavaScript API & Storage Example</h1>
+
+  <!-- 1. API Explanation -->
+  <h2>1️⃣ What is an API?</h2>
+  <p>
+    An API acts as a bridge between your JavaScript code and a server.
+    It helps you request data and receive responses without accessing
+    the server directly.
+  </p>
+
+  <!-- 2. Fetch Data from Public API -->
+  <h2>2️⃣ Fetch Data from Public API</h2>
+  <button onclick="fetchUsers()">Fetch Users</button>
+  <pre id="apiData"></pre>
+
+  <!-- 3. Convert Object to JSON -->
+  <h2>3️⃣ Convert Object into JSON</h2>
+  <button onclick="convertToJSON()">Convert Object</button>
+  <pre id="jsonData"></pre>
+
+  <!-- 4. localStorage Store & Retrieve -->
+  <h2>4️⃣ Store & Retrieve from localStorage</h2>
+  <button onclick="storeData()">Store Data</button>
+  <button onclick="getData()">Get Data</button>
+  <pre id="storageData"></pre>
+
+  <!-- 5. Difference -->
+  <h2>5️⃣ localStorage vs sessionStorage</h2>
+  <p>
+    <strong>localStorage</strong> keeps data even after closing the browser.<br>
+    <strong>sessionStorage</strong> clears data when the tab is closed.
+  </p>
+
+<script>
+  // 2️⃣ Fetch data from a public API
+  function fetchUsers() {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("apiData").textContent =
+          JSON.stringify(data, null, 2);
+      });
+  }
+
+  // 3️⃣ Convert object to JSON
+  function convertToJSON() {
+    const user = {
+      name: "Aswitha",
+      role: "Frontend Developer",
+      city: "Chennai"
+    };
+
+    const json = JSON.stringify(user);
+    document.getElementById("jsonData").textContent = json;
+  }
+
+  // 4️⃣ Store data in localStorage
+  function storeData() {
+    localStorage.setItem("course", "JavaScript");
+    document.getElementById("storageData").textContent =
+      "Data stored in localStorage";
+  }
+
+  // 4️⃣ Retrieve data from localStorage
+  function getData() {
+    const value = localStorage.getItem("course");
+    document.getElementById("storageData").textContent =
+      "Retrieved value: " + value;
+  }
+</script>
+
+</body>
+</html>
