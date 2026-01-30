@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Database Concepts</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+    }
+    h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 70%;
+      margin: 10px 0;
+    }
+    table, th, td {
+      border: 1px solid #333;
+    }
+    th, td {
+      padding: 8px;
+      text-align: center;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    .box {
+      background-color: #f4f6f7;
+      padding: 10px;
+      border-left: 5px solid #3498db;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>1. Database Table Structure (Draw on Paper)</h2>
+  <p>You can draw the following table structure on paper:</p>
+
+  <table>
+    <tr>
+      <th>Student_ID</th>
+      <th>Name</th>
+      <th>Department</th>
+      <th>Marks</th>
+    </tr>
+    <tr>
+      <td>101</td>
+      <td>Aswitha</td>
+      <td>CSE</td>
+      <td>85</td>
+    </tr>
+    <tr>
+      <td>102</td>
+      <td>Ravi</td>
+      <td>ECE</td>
+      <td>78</td>
+    </tr>
+  </table>
+
+  <div class="box">
+    Rows → Records (horizontal) <br>
+    Columns → Fields (vertical)
+  </div>
+
+  <h2>2. Databases Used in Daily Life</h2>
+  <ul>
+    <li>Banking systems – account and transaction data</li>
+    <li>College/School – student and staff records</li>
+    <li>Mobile apps – user login and profile data</li>
+    <li>Shopping apps – products, orders, payments</li>
+    <li>Social media – posts, likes, comments</li>
+  </ul>
+
+  <h2>3. SQL Workflow (Step by Step)</h2>
+  <ol>
+    <li>User sends an SQL query</li>
+    <li>DBMS receives the query</li>
+    <li>DBMS validates SQL syntax</li>
+    <li>Query is executed on database tables</li>
+    <li>Result is returned to the user</li>
+  </ol>
+
+  <div class="box">
+    User → SQL Query → DBMS → Database → Result
+  </div>
+
+  <h2>4. File System vs Database</h2>
+  <table>
+    <tr>
+      <th>Feature</th>
+      <th>File System</th>
+      <th>Database</th>
+    </tr>
+    <tr>
+      <td>Data Storage</td>
+      <td>Files</td>
+      <td>Tables</td>
+    </tr>
+    <tr>
+      <td>Redundancy</td>
+      <td>High</td>
+      <td>Low</td>
+    </tr>
+    <tr>
+      <td>Security</td>
+      <td>Less secure</td>
+      <td>Highly secure</td>
+    </tr>
+    <tr>
+      <td>Data Access</td>
+      <td>Slow</td>
+      <td>Fast using SQL</td>
+    </tr>
+    <tr>
+      <td>Backup</td>
+      <td>Manual</td>
+      <td>Automatic</td>
+    </tr>
+  </table>
+
+  <h2>5. Database Concept (1-Minute Explanation)</h2>
+  <p>
+    A database is an organized collection of data stored in tables.
+    It helps store large amounts of information securely and efficiently.
+    A DBMS is used to manage the database, and SQL is used to communicate
+    with it. Databases reduce data duplication, improve security, and
+    allow fast access to data. They are widely used in banking, education,
+    shopping apps, and social media.
+  </p>
+
+</body>
+</html>
