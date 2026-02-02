@@ -39,3 +39,27 @@ returns all records from the left table even if no match exist
 --Right join
 
 returns all records from the right table even if no match exist
+
+-- stored procedure 
+ stored procedure is a precomplied block of sql statements stored in the database 
+
+reusability 
+faster execution
+less network traffic
+better security
+clean application code
+
+stored procedure is stored permanently in database
+
+--Trigger
+Trigger is a special sql program that automatically executes when an event occur , which is insert ,delete , update .
+
+types of triggers
+
+
+    --Triggers type                     when its Executes
+  1. before insert                 before inserting the data 
+  2. after insert                  after inserting the data
+  3. before update                 before update 
+  4.after delete                   after delete
+
