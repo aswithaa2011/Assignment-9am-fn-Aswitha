@@ -42,19 +42,55 @@
 
 // export default ProductList;
 
-import DashboardCard from "./DashboardCard";
-function Dashboard(){
-    return(
-        <div style={{display:"flex", gap:"20px"}}>
-            <DashboardCard title="users" value="25"/>
-               <DashboardCard title="sales" value="75"/>
-                  <DashboardCard title="Orders" value="7 5"/>
+// import DashboardCard from "./DashboardCard";
 
-        </div>
-    )
+
+// function Dashboard(){
+//     return(
+//         <div style={{display:"flex", gap:"20px"}}>
+//             <DashboardCard title="users" value="25"/>
+//                <DashboardCard title="sales" value="75"/>
+//                   <DashboardCard title="Orders" value="7 5"/>
+
+//         </div>
+//     )
+// }
+
+// export default Dashboard;
+
+import Description from "./description";
+import Section from "./section";
+import Footer from "./footer";
+import Header from "./header";
+
+function App(){
+  return(
+    <div>
+      <Header name="Aswitha"/>
+
+      <Description  text="I’m a creative and positive thinker who loves learning new technologies and designing webpages"
+      />
+
+      <Section id="section1"
+      title="Blue Section"
+        text="This section has a blue background with white text" />
+
+   
+    
+
+      <Section
+        id="section3"
+        title="Green Section"
+        text="This section has a green background and styled text."
+      />
+
+        <Footer year="2025" />
+    </div>
+  )
 }
 
-export default Dashboard;
+
+export default App;
 
 
 
