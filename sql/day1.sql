@@ -63,3 +63,14 @@ types of triggers
   3. before update                 before update 
   4.after delete                   after delete
 
+
+--view
+
+a view is a virtual table created using a select query 
+
+high sensitive columns
+simplify complex query 
+improves security
+reuse logics
+provide clean data access
+
